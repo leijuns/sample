@@ -5,7 +5,7 @@
         <div class="jumbotron">
             <h1>Laravel Project</h1>
             <p>这是我的跟随训练</p>
-            <button class="btn btn-success">立即注册</button>
+            <a href="{{ route('signup') }}"><button class="btn btn-success">立即注册</button></a>
         </div>
     </div>
 @stop
