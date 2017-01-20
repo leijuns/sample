@@ -38,3 +38,12 @@ body,html{
 .users-show .head-right b{
   color: #00B5AD;
 }
+
+/*  header  */
+
+#logout{
+  cursor: default;
+  &:hover{
+    background: transparent;
+  }
+}
