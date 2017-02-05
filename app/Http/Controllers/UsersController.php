@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Mail;
 
 use App\Models\User;
 
@@ -59,8 +60,8 @@ class UsersController extends Controller
             'email'=>$request->email,
             'password'=>$request->password
         ]);
-        Auth::login($user);
-        session()->flash('success', '欢迎注册,在这里我们相互进步');
+        $this->sendConfirmEmail($user);
+        session()->flash('success', '已发送确认邮件至您的邮箱,请前往您的邮箱'.$user->email.'确认您的邮件');
         return redirect()->route('users.show', [$user]);
 
     }
@@ -92,5 +93,35 @@ class UsersController extends Controller
         $user->delete();
         session()->flash('success', '删除成功');
         return back();
+    }
+    /*
+     * 发送确认邮件
+     */
+    public function sendConfirmEmail($user){
+        $view = 'emails.confirm';
+        $data = compact('user');
+        $from = '724099654@qq.com';
+        $name = 'leijun';
+        $to = $user->email;
+        $subject = "感谢注册 Sample 应用！请确认你的邮箱。";
+
+        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
+            $message->from($from, $name)->to($to)->subject($subject);
+        });
+    }
+
+    /*
+     * 确认邮件
+     */
+    public function confirmEmail($token){
+        $user = User::where('activation_token', $token)->firstOrFail();
+        $user->activated = true;
+        $user->activation_token = null;
+        $user->save();
+
+        Auth::login($user);
+
+        session()->flash('success', '恭喜您,已激活成功');
+        return redirect()->route('users.show', [$user]);
     }
 }
