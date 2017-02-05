@@ -20,6 +20,9 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    protected $redirectPath = '/';
+    protected $subject='sample App密码重置邮件';
+
     /**
      * Create a new password controller instance.
      *

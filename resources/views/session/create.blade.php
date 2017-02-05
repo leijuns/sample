@@ -13,7 +13,7 @@
                         <input class="form-control" type="email" name="email" value="{{ old('email') }}" >
                     </div>
                     <div class="form-group">
-                        <label class="control-label">密码</label>
+                        <label class="control-label">密码(<a href="{{ route('password.reset') }}">忘记密码?</a>)</label>
                         <input class="form-control" type="password" name="password" value="{{ old('password') }}" >
                     </div>
                     <div class="checkbox">

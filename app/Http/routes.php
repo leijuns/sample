@@ -27,3 +27,9 @@ resource('users', 'UsersController');
 Route::get('login', 'SessionController@create')->name('login');
 Route::post('login', 'SessionController@store')->name('store');
 Route::delete('logout', 'SessionController@destroy')->name('logout');
+
+//密码重置
+get('password/email', 'Auth\PasswordController@getEmail')->name('password.reset');
+post('password/email', 'Auth\PasswordController@postEmail')->name('password.reset');
+get('password/reset/{token}', 'Auth\PasswordController@getReset')->name('password.edit');
+post('password/reset', 'Auth\PasswordController@postReset')->name('password.update');

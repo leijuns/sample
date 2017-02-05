@@ -9,6 +9,7 @@
     <div class="container">
 
         @include('layouts._header')
+        @include('shared.message')
         @yield('content')
 
     </div>

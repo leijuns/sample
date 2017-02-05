@@ -12,6 +12,12 @@ body,html{
 .offset-left-1{
   margin-left: 10px;
 }
+.alert-status {
+  @extend .alert-info;
+}
+.form-group{
+  overflow: auto;
+}
 
 /* home */
 .jumbotron{
@@ -112,5 +118,10 @@ body,html{
   float: right;
   position: relative;
   right: 0;
+}
+
+/*  重置密码  */
+.password{
+
 }
 
