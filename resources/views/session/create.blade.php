@@ -2,7 +2,6 @@
 @section('title', '用户登陆')
 @section('content')
     <div class="col-md-6 col-md-offset-3">
-        @include('shared.message')
         <div class="panel panel-default">
             <div class="panel-heading">登陆</div>
             <div class="panel-body">

@@ -70,4 +70,18 @@ class User extends Model implements AuthenticatableContract,
         $hash = md5( strtolower( trim( $email ) ) );
         return "https://www.gravatar.com/avatar/" . $hash . "?s=" . $size /*. "&d=" . urlencode( $default ) */;
     }
+
+    /*
+     * 一对多关联
+     */
+    public function statuses(){
+        return $this->hasMany(Status::class);
+    }
+
+    /*
+     * 取出用户微博
+     */
+    public function feed(){
+        return $this->statuses()->orderBy('created_at', 'desc');
+    }
 }

@@ -46,8 +46,11 @@ class UsersController extends Controller
     }
     public function show($id){
         $user = User::findOrFail($id);
+        $statuses = $user->statuses()
+            ->orderBy('created_at', 'desc')
+            ->paginate(30);
         $count = User::where('id', '<=', $user->id)->count();
-        return view('users.show', compact('user','count'));
+        return view('users.show', compact('user','count', 'statuses'));
     }
     public function store(Request $request){
         $this->validate($request, [

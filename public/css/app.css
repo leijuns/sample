@@ -5743,6 +5743,9 @@ body, html {
 .form-group {
   overflow: auto; }
 
+.content-right {
+  text-align: right; }
+
 /* home */
 .jumbotron {
   text-align: center;
@@ -5761,16 +5764,43 @@ body, html {
 /* user show */
 .users-show {
   margin-bottom: 10px; }
+  .users-show .user-head {
+    padding: 15px;
+    padding-top: 0; }
+    .users-show .user-head .head-body {
+      border-radius: 4px;
+      background: #fff;
+      padding: 10px;
+      overflow: auto;
+      text-align: center; }
+    .users-show .user-head .status_form {
+      padding: 20px 10px;
+      border-radius: 4px;
+      background: #fff;
+      margin: 10px 0; }
   .users-show .head-left {
-    text-align: center; }
+    text-align: left;
+    padding: 8px;
+    padding-left: 0;
+    display: inline-block; }
     .users-show .head-left img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%; }
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      max-width: 100%; }
   .users-show .head-right {
-    text-align: center; }
+    text-align: left;
+    padding: 0;
+    padding-left: 6px;
+    padding-top: 8px;
+    display: inline-block;
+    vertical-align: middle; }
     .users-show .head-right h1 {
-      margin-top: 0; }
+      margin-top: 0;
+      word-break: break-all;
+      font-size: 16px; }
+    .users-show .head-right p {
+      margin-bottom: 0; }
     .users-show .head-right small {
       font-size: 1em;
       color: #888; }
@@ -5794,29 +5824,31 @@ body, html {
   text-align: center; }
 
 /*  所有用户  */
-.users h1 {
-  text-align: center; }
-
-.users ul, .users li {
-  list-style: none;
-  padding: 0;
-  margin: 0; }
-
-.users ul {
+.users {
+  background: #fff;
+  border-radius: 4px;
+  padding: 15px;
   margin-bottom: 20px; }
-
-.users li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-  overflow: scroll; }
-  .users li img {
-    border-radius: 50%;
-    vertical-align: top;
-    float: left;
-    width: 60px;
-    height: 60px; }
-  .users li a {
-    vertical-align: top; }
+  .users h1 {
+    text-align: center; }
+  .users ul, .users li {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .users ul {
+    margin-bottom: 20px; }
+  .users li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+    overflow: scroll; }
+    .users li img {
+      border-radius: 50%;
+      vertical-align: top;
+      float: left;
+      width: 60px;
+      height: 60px; }
+    .users li a {
+      vertical-align: top; }
 
 .delete-btn {
   float: right;
@@ -5824,5 +5856,36 @@ body, html {
   right: 0; }
 
 /*  重置密码  */
+/*  微博展示  */
+.statuses {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0; }
+  .statuses li {
+    position: relative;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc; }
+    .statuses li:last-child {
+      border-bottom: none; }
+    .statuses li .gravatar {
+      vertical-align: top;
+      position: absolute;
+      width: 40px;
+      height: 40px; }
+    .statuses li .user {
+      vertical-align: top;
+      margin-left: 50px; }
+    .statuses li .timestamp {
+      display: block;
+      margin-left: 50px; }
+    .statuses li .content {
+      display: block;
+      margin-left: 50px; }
+
+/*  首页微博  */
+.status-list {
+  background: #fff;
+  padding: 15px 20px;
+  margin: 20px 0; }
 
 /*# sourceMappingURL=app.css.map */
