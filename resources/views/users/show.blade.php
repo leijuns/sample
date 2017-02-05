@@ -5,7 +5,7 @@
     <div class="users-show row">
         <div class="col-md-4">
             <div class="head-left col-md-6">
-                <img src="/img/head.jpg" alt="{{ $user->name }}">
+                @include('shared.avatar')
             </div>
             <div class="head-right col-md-6">
                 <h1>{{ $user->name }}</h1>

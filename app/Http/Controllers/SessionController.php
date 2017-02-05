@@ -11,6 +11,13 @@ use Auth;
 
 class SessionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only'  =>  'create'
+        ]);
+    }
+
     public function create(){
         return view('session.create');
     }
@@ -25,9 +32,9 @@ class SessionController extends Controller
         ];
         if(Auth::attempt($user, $request->has('remember'))){        //第二个参数设定是否开启"记住我"
             session()->flash('success', '登陆成功,欢迎回来');
-            return redirect()->route('users.show', Auth::user());
+            return redirect()->intended(route('users.show', [Auth::user()]));
         }else{
-            session()->flash('error', '登陆失败,用户密码不匹配');
+            session()->flash('danger', '很抱歉，您的邮箱和密码不匹配');
             return redirect()->back();
         }
     }

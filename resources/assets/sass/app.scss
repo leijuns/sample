@@ -1,8 +1,18 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
+$gray-line:#ccc;
 body,html{
   background: #f0f2f5;
 }
+
+/* public */
+.offset-top-1{
+  margin-top: 10px;
+}
+.offset-left-1{
+  margin-left: 10px;
+}
+
 /* home */
 .jumbotron{
   text-align: center;
@@ -22,22 +32,29 @@ body,html{
 /* user show */
 .users-show{
   margin-bottom: 10px;
+  .head-left{
+    text-align: center;
+    img{
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+  }
+  .head-right{
+    text-align: center;
+    h1{
+      margin-top: 0;
+    }
+    small{
+      font-size: 1em;
+      color: #888;
+    }
+    b{
+      color: #00B5AD;
+    }
+  }
 }
-.users-show .head-left img{
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-}
-.users-show .head-right h1{
-  margin-top: 0;
-}
-.users-show .head-right small{
-  font-size: 1em;
-  color: #888;
-}
-.users-show .head-right b{
-  color: #00B5AD;
-}
+
 
 /*  header  */
 
@@ -47,3 +64,53 @@ body,html{
     background: transparent;
   }
 }
+
+/* gravatar */
+.gravatar{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+/*user-edit*/
+.edit-gravatar{
+  text-align: center;
+}
+
+
+/*  所有用户  */
+.users {
+  h1{
+    text-align: center;
+  }
+  ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul{
+    margin-bottom: 20px;
+  }
+  li {
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-line;
+    overflow: scroll;
+    img {
+      border-radius: 50%;
+      vertical-align: top;
+      float: left;
+      width: 60px;
+      height: 60px;
+    }
+    a{
+      vertical-align: top;
+    }
+  }
+}
+
+.delete-btn{
+  float: right;
+  position: relative;
+  right: 0;
+}
+

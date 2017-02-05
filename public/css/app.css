@@ -5733,6 +5733,13 @@ button.close {
 body, html {
   background: #f0f2f5; }
 
+/* public */
+.offset-top-1 {
+  margin-top: 10px; }
+
+.offset-left-1 {
+  margin-left: 10px; }
+
 /* home */
 .jumbotron {
   text-align: center;
@@ -5751,26 +5758,66 @@ body, html {
 /* user show */
 .users-show {
   margin-bottom: 10px; }
-
-.users-show .head-left img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%; }
-
-.users-show .head-right h1 {
-  margin-top: 0; }
-
-.users-show .head-right small {
-  font-size: 1em;
-  color: #888; }
-
-.users-show .head-right b {
-  color: #00B5AD; }
+  .users-show .head-left {
+    text-align: center; }
+    .users-show .head-left img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%; }
+  .users-show .head-right {
+    text-align: center; }
+    .users-show .head-right h1 {
+      margin-top: 0; }
+    .users-show .head-right small {
+      font-size: 1em;
+      color: #888; }
+    .users-show .head-right b {
+      color: #00B5AD; }
 
 /*  header  */
 #logout {
   cursor: default; }
   #logout:hover {
     background: transparent; }
+
+/* gravatar */
+.gravatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; }
+
+/*user-edit*/
+.edit-gravatar {
+  text-align: center; }
+
+/*  所有用户  */
+.users h1 {
+  text-align: center; }
+
+.users ul, .users li {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.users ul {
+  margin-bottom: 20px; }
+
+.users li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  overflow: scroll; }
+  .users li img {
+    border-radius: 50%;
+    vertical-align: top;
+    float: left;
+    width: 60px;
+    height: 60px; }
+  .users li a {
+    vertical-align: top; }
+
+.delete-btn {
+  float: right;
+  position: relative;
+  right: 0; }
 
 /*# sourceMappingURL=app.css.map */
